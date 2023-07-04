@@ -59,8 +59,8 @@
 													<select name="hak_akses" class="form-control">
 														<option disabled="" selected="">Pilih Hak Akses</option>
 														<option value="Pemohon">Pemohon</option>
-														<option value="Lurah">Lurah</option>
-														<option value="Rt">Rt</option>
+														<!-- <option value="Lurah">Lurah</option>
+														<option value="Rt">Rt</option> -->
 													</select>
 												</div>
 											</div>

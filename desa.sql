@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2023 at 07:42 AM
+-- Generation Time: Jul 04, 2023 at 09:38 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -42,10 +42,11 @@ CREATE TABLE `administrasi` (
 --
 
 INSERT INTO `administrasi` (`id_administrasi`, `nama`, `keterangan`, `id_jenis_administrasi`, `foto`, `link`, `periode`) VALUES
-(5, 's', 's', 14, '513-ika alumni informatika.png', 's', 's'),
-(6, 'aaaaaaaa', 'aaaaaaaaaaaaa', 2, '257-logo PUPIKA 23 (1).png', 'http://localhost/surat-keterangan-desa/', '2022'),
-(7, 'asssssss', 'ssss', 15, '30-VB Sapa Alumni.jpg', 'd', 'd'),
-(8, 'Buku Keputusan Kepala Desa', 'Keputusan Kepala Desa adalah penetapan yang bersifat konkrit, individual, dan final. Evaluasi adalah pengkajian dan penilaian terhadap rancangan Peraturan Desa untuk mengetahui bertentangan dengan kepentingan umum dan/atau Peraturan Perundang-undangan yang lebih tinggi', 14, '326-sa-Page-16.drawio.png', 'http://localhost/surat-keterangan-desa/', '2023');
+(10, 'Buku Peraturan Desa', 'Buku yang ditetapkan oleh Kepala Desa dengan persetujuan Badan Permusayawaratn Desa yang mengikat seluruh Warga Masyarakat Desa', 14, '737-sedang_1659931243_LOGO PERKAL_page-0001.jpg', 'https://kembang-kulonprogo.desa.id', '2023'),
+(11, 'Buku keputusan kepala desa', 'Keputusan Kepala Desa adalah penetapan yang bersifat konkrit, individual, dan final.', 14, '467-208d64fe21ef4951636d4b9ca5074b34.jpg', 'https://github.com/OpenSID/OpenSID/issues/522', '2023'),
+(12, 'Buku tanah desa', 'kepemilikan tanah menurut Peraturan Pemerintah Nomor 24 Tahun 1997 tentang pendaftaran tanah, untuk memperoleh suatu hak atas tanah dalam melakukan pendaftaran atas tanah dimana tanah-tanah tersebut sebagai tanah-tanah yang tunduk terhadap hukum adat.', 14, '554-IMG-20200604-WA0008.jpg', 'https://tangerangonline.id/2020/06/04/forum-pemuda-pantura-masih-ada-pejabat-desa-belum-menyerahkan-buku-tanah-desa/', '2023'),
+(13, 'Buku Lembaran Desa dan Buku Berita Desa', 'Buku pencatatan data dan informasi mengenai kegiatan pemerintahan desa pada buku administrasi umum', 0, '861-download (1).jpg', 'https://drive.google.com/file/d/19is_kqoGv3xB-rx0mw8F4QuJoTnRVZMh/view', '2023'),
+(14, 'Buku Lembaran & Berita Desa', 'pencatatan data dan informasi mengenai kegiatan pemerintahan desa pada buku administrasi umum', 14, '734-download (1).jpg', 'https://drive.google.com/file/d/19is_kqoGv3xB-rx0mw8F4QuJoTnRVZMh/view', '2023');
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,9 @@ CREATE TABLE `data_request_sktm` (
 
 INSERT INTO `data_request_sktm` (`id_request_sktm`, `nik`, `tanggal_request`, `scan_ktp`, `scan_kk`, `keperluan`, `request`, `keterangan`, `status`, `acc`) VALUES
 (56, '12345678', '2022-08-10 13:24:28', '12345678_.jpg', '12345678_.jpg', 'daftar beasiswa', 'TIDAK MAMPU', 'Surat dicetak, bisa diambil!', 3, '2022-08-10'),
-(57, '12345678', '2023-06-24 09:58:09', '12345678_.jpg', '12345678_.jpg', 'ddddddddd', 'TIDAK MAMPU', 'Surat dicetak, bisa diambil!', 3, '2023-06-24');
+(57, '12345678', '2023-06-24 09:58:09', '12345678_.jpg', '12345678_.jpg', 'ddddddddd', 'TIDAK MAMPU', 'Surat dicetak, bisa diambil!', 3, '2023-06-24'),
+(58, '12345678', '2023-07-03 04:57:53', '12345678_.jpg', '12345678_.jpg', 'tes alamay', 'TIDAK MAMPU', 'Surat dicetak, bisa diambil!', 2, '2023-07-03'),
+(59, '12345678', '2023-07-04 01:21:30', '12345678_.jpg', '12345678_.jpg', 'Tes Blackbox', 'TIDAK MAMPU', 'Data sedang diperiksa oleh Staf', 1, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -166,6 +169,7 @@ INSERT INTO `data_user` (`nik`, `password`, `hak_akses`, `nama`, `tanggal_lahir`
 ('12345678', 'anam', 'Pemohon', 'Ahmad khoirul anam', '2022-06-30', 'pati', 'Laki-Laki', 'Islam', ' ivibobm', '97979', 'Belum Bekerja', '5', NULL, NULL),
 ('2', '2', 'Rt', 'coba', '2021-10-20', 'coba', 'Perempuan', '', 'coba', '', 'Kerja', NULL, NULL, NULL),
 ('321', 'riki', 'Rt2', 'riki', '2022-07-19', 'blora', 'Laki-Laki', '', 'ds', '', 'Kerja', NULL, NULL, NULL),
+('3453211', 'sekdes', 'Rt', 'Anshori', '1992-06-09', 'Pati', 'Laki-Laki', '', 'Pati', '', 'Kerja', NULL, NULL, 'sekdes'),
 ('768', 'adit', 'Rt3', 'adit', '2022-07-14', 'l', 'Laki-Laki', '', 'k', '', 'Kerja', NULL, NULL, NULL),
 ('777', '12345', 'Pemohon', 'a', '2021-10-20', 'oke', 'Laki-Laki', '', 'x', '', 'Sekolah', NULL, NULL, NULL),
 ('888', '12345', 'Pemohon', 'cobalagi', '2021-10-20', 'cobalagi', 'Perempuan', '', 'coba', '', 'Sekolah', NULL, NULL, NULL),
@@ -234,7 +238,7 @@ INSERT INTO `produk` (`id`, `nama_produk`, `deskripsi`, `harga_beli`, `harga_jua
 CREATE TABLE `produk_unggulan` (
   `id_produk_unggulan` int(5) NOT NULL,
   `nama_unggulan` varchar(255) NOT NULL,
-  `id_jenis_unggulan` int(5) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
   `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -242,9 +246,11 @@ CREATE TABLE `produk_unggulan` (
 -- Dumping data for table `produk_unggulan`
 --
 
-INSERT INTO `produk_unggulan` (`id_produk_unggulan`, `nama_unggulan`, `id_jenis_unggulan`, `foto`) VALUES
-(2, 'adit', 3, '359-ika alumni informatika.png'),
-(4, 'ssss', 4, '257-sa-Page-1.drawio (3).png');
+INSERT INTO `produk_unggulan` (`id_produk_unggulan`, `nama_unggulan`, `keterangan`, `foto`) VALUES
+(2, 'adit', 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam', '359-ika alumni informatika.png'),
+(4, 'ssss', 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam', '257-sa-Page-1.drawio (3).png'),
+(5, 'ds', 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diamww', '438-7.png'),
+(6, 'Jahe instan', 'Jahe instan, temu lawak instan, dan sirup jahe produk unggulan KWT An-Nisa', '711-images.jpg');
 
 -- --------------------------------------------------------
 
@@ -263,7 +269,7 @@ CREATE TABLE `profil_desa` (
 --
 
 INSERT INTO `profil_desa` (`id_desa`, `nama_desa`, `alamat`) VALUES
-(1, 'DddSS', 'qSSS');
+(1, 'Kedumulyo', 'kecamatan Sukolilo, Pati, Jawa Tengah');
 
 --
 -- Indexes for dumped tables
@@ -347,7 +353,7 @@ ALTER TABLE `profil_desa`
 -- AUTO_INCREMENT for table `administrasi`
 --
 ALTER TABLE `administrasi`
-  MODIFY `id_administrasi` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_administrasi` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `data_request_skd`
@@ -365,7 +371,7 @@ ALTER TABLE `data_request_skp`
 -- AUTO_INCREMENT for table `data_request_sktm`
 --
 ALTER TABLE `data_request_sktm`
-  MODIFY `id_request_sktm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_request_sktm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `data_request_sku`
@@ -395,7 +401,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT for table `produk_unggulan`
 --
 ALTER TABLE `produk_unggulan`
-  MODIFY `id_produk_unggulan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_produk_unggulan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `profil_desa`

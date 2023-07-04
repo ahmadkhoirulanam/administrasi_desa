@@ -90,9 +90,28 @@ if (isset($_GET['id'])) {
                                     <input type="text" name="deskripsi" class="form-control" value="<?php echo $data['keterangan']; ?>" />
                                 </div>
                                 <div class="form-group">
-                                    <label>Jenis Administrasi</label>
-                                    <input type="text" name="id_jenis_administrasi" class="form-control" required="" value="<?php echo $data['id_jenis_administrasi']; ?>" />
+                                   
+                                    <input type="hidden" name="id_jenis_administrasi" class="form-control" required="" value="<?php echo $data['id_jenis_administrasi']; ?>" />
                                 </div>
+                                <!-- <div class="form-group">
+                                    <label class="form-label" for="single-default">Semester</label>
+                                    <select class="select2 form-control w-100" id="single-default" name="id_jenis_administrasi">
+                                        <option disabled selected> Pilih </option>
+                                      
+                                        <?php
+                                        $query_jurusan = mysqli_query($konek, "SELECT * FROM jenis_administrasi");
+
+                                        while ($data_jurusan = mysqli_fetch_array($query_jurusan)) {
+                                            if ($r->id_jenis_administrasi == $data_jurusan['id_jenis_administrasi']) {
+                                                $select = "selected";
+                                            } else {
+                                                $select = "";
+                                            }
+                                            echo "<option value=" . $data_jurusan['id_jenis_administrasi'] . " $select>" . $data_jurusan['nama_jenis'] . "</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div> -->
                                 <div class="form-group">
                                     <label>Gambar Produk</label>
                                     <img src="gambar/<?php echo $data['foto']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">

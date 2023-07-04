@@ -86,8 +86,8 @@ if (isset($_GET['id'])) {
                                     <input type="text" name="nama" class="form-control" value="<?php echo $data['nama_unggulan']; ?>" autofocus="" required="" />
                                 </div>
                                 <div class="form-group">
-                                    <label>Jenis Produk Unggulan</label>
-                                    <input type="text" name="id_jenis_unggulan" class="form-control" required="" value="<?php echo $data['id_jenis_unggulan']; ?>" />
+                                    <label>Keterangan</label>
+                                    <input type="text" name="id_jenis_unggulan" class="form-control" required="" value="<?php echo $data['keterangan']; ?>" />
                                 </div>
                                 <div class="form-group">
                                     <label>Gambar Produk Unggulan</label>

@@ -41,12 +41,7 @@
 								<p>Status Request</p>
 							</a>
 						</li>
-						<li class="nav-item">
-							<a href="?halaman=tampil_kas">
-								<i class="far fa-calendar-check"></i>
-								<p>informasi Kas</p>
-							</a>
-						</li>
+						
 						<?php
 							}
 						?>

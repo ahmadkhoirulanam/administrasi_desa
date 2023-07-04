@@ -2,13 +2,26 @@
 session_start();
 include 'konek.php';
 $level = "pemohon";
+$query = "SELECT * FROM profil_desa";
+$result = mysqli_query($konek, $query);
+// jika data gagal diambil maka akan tampil error berikut
+if (!$result) {
+    die("Query Error: " . mysqli_errno($konek) .
+        " - " . mysqli_error($konek));
+}
+// mengambil data dari database
+$data = mysqli_fetch_assoc($result);
+// apabila data tidak ada pada database maka akan dijalankan perintah ini
+if (!count($data)) {
+    echo "<script>alert('Data tidak ditemukan pada database');window.location='index.php';</script>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Restoran - Bootstrap Restaurant Template</title>
+    <title><?php echo $data['nama_desa']; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -52,7 +65,7 @@ $level = "pemohon";
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0">Desa Kedumulyo</h1>
+                    <h1 class="text-primary m-0">Desa <?php echo $data['nama_desa']; ?></h1>
                     <!-- <img src="muka/img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -82,7 +95,7 @@ $level = "pemohon";
                                 // kemudian dicetak dengan perulangan while
                                 while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
-                                     <a href="http://localhost/surat-keterangan-desa/administrasi.php?id=<?php echo $row['id_jenis_administrasi']; ?>" class="dropdown-item"><?php echo $row['nama_jenis']; ?></a>
+                                    <a href="http://localhost/surat-keterangan-desa/administrasi.php?id=<?php echo $row['id_jenis_administrasi']; ?>" class="dropdown-item"><?php echo $row['nama_jenis']; ?></a>
 
                                 <?php
                                     $no++; //untuk nomor urut terus bertambah 1
@@ -101,17 +114,17 @@ $level = "pemohon";
                 <div class="container my-5 py-5">
                     <div class="row align-items-center g-5">
                         <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="display-3 text-white animated slideInLeft">Selamat Datang<br>Di Desa Kedumulyo</h1>
+                            <h1 class="display-3 text-white animated slideInLeft">Selamat Datang<br>Di Desa <?php echo $data['nama_desa']; ?></h1>
                             <p class="text-white animated slideInLeft mb-4 pb-2">Kedumulyo adalah desa di kecamatan Sukolilo, Pati, Jawa Tengah, Indonesia. Desa yang terletak sekitar 4 km arah timur laut dari ibu kota kecamatan Sukolilo ini terletak di lereng pegunungan Kapur Utara</p>
                             <a href="login.php" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Ajukan Surat</a>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
         </div>
         <!-- Navbar & Hero End -->
-        
+
 
         <!-- About Start -->
         <div class="container-xxl py-5" id="features">
@@ -120,22 +133,22 @@ $level = "pemohon";
                     <div class="col-lg-6">
                         <div class="row g-3">
                             <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="muka/img/about-1.jpg">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="muka/img/2.jpeg">
                             </div>
                             <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="muka/img/about-2.jpg" style="margin-top: 25%;">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="muka/img/1.jpeg" style="margin-top: 55%;">
                             </div>
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="muka/img/about-3.jpg">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="muka/img/3.jpeg">
                             </div>
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="muka/img/about-4.jpg">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="muka/img/4.jpeg">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Profil Desa</h5>
-                        <h1 class="mb-4">Selamat Datang Di Desa Kedumulyo</h1>
+                        <h1 class="mb-4">Selamat Datang Di Desa <?php echo $data['nama_desa']; ?></h1>
                         <p class="mb-4">Kedumulyo adalah desa di kecamatan Sukolilo, Pati, Jawa Tengah, Indonesia. Desa yang terletak sekitar 4 km arah timur laut dari ibu kota kecamatan Sukolilo ini terletak di lereng pegunungan Kapur Utara</p>
                         <div class="row g-4 mb-4">
                             <div class="col-sm-6">
@@ -162,52 +175,53 @@ $level = "pemohon";
                 </div>
             </div>
         </div>
-            
+
 
         <!-- Testimonial Start -->
         <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" id="unggulan">
             <div class="container">
                 <div class="text-center">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Desa Kedumulyo</h5>
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Desa <?php echo $data['nama_desa']; ?></h5>
                     <h1 class="mb-5">produk_unggulan</h1>
                 </div>
                 <div class="owl-carousel testimonial-carousel">
-                <?php
-                                // jalankan query untuk menampilkan semua data diurutkan berdasarkan nim
-                                $query = "SELECT * FROM produk_unggulan";
-                                $result = mysqli_query($konek, $query);
-                                //mengecek apakah ada error ketika menjalankan query
-                                if (!$result) {
-                                    die("Query Error: " . mysqli_errno($konek) .
-                                        " - " . mysqli_error($konek));
-                                }
+                    <?php
+                    // jalankan query untuk menampilkan semua data diurutkan berdasarkan nim
+                    $query = "SELECT * FROM produk_unggulan";
+                    $result = mysqli_query($konek, $query);
+                    //mengecek apakah ada error ketika menjalankan query
+                    if (!$result) {
+                        die("Query Error: " . mysqli_errno($konek) .
+                            " - " . mysqli_error($konek));
+                    }
 
-                                //buat perulangan untuk element tabel dari data mahasiswa
-                                $no = 1; //variabel untuk membuat nomor urut
-                                // hasil query akan disimpan dalam variabel $data dalam bentuk array
-                                // kemudian dicetak dengan perulangan while
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                ?>
-                                   
+                    //buat perulangan untuk element tabel dari data mahasiswa
+                    $no = 1; //variabel untuk membuat nomor urut
+                    // hasil query akan disimpan dalam variabel $data dalam bentuk array
+                    // kemudian dicetak dengan perulangan while
+                    while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                        <div class="testimonial-item bg-transparent border rounded p-4">
+                            <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                            <?php
+                            $d = $row['keterangan'];
+                            ?>
+                            <p><?php echo $d; ?></p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded-circle" src="demo1/gambar/<?php echo $row['foto']; ?>" style="width: 50px; height: 50px;">
+                                <div class="ps-3">
+                                    <h5 class="mb-1"><?php echo $row['nama_unggulan']; ?></h5>
+                                    <small>Profession</small>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                        $no++; //untuk nomor urut terus bertambah 1
+                    }
+                    ?>
 
-                                    <div class="testimonial-item bg-transparent border rounded p-4">
-                                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                                        <div class="d-flex align-items-center">
-                                            <img class="img-fluid flex-shrink-0 rounded-circle" src="demo1/gambar/<?php echo $row['foto']; ?>" style="width: 50px; height: 50px;">
-                                            <div class="ps-3">
-                                                <h5 class="mb-1"><?php echo $row['nama_unggulan']; ?></h5>
-                                                <small>Profession</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php
-                                    $no++; //untuk nomor urut terus bertambah 1
-                                }
-                                ?>
-                                
-                   
-                    
+
+
                 </div>
             </div>
         </div>
@@ -216,8 +230,8 @@ $level = "pemohon";
         <div class="container-xxl py-5" id="contack">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Hubungi Kami</h5>
-                    <h1 class="mb-5">Desa Kedumulyo</h1>
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">GIS Wisata</h5>
+                    <h1 class="mb-5">Desa <?php echo $data['nama_desa']; ?></h1>
                 </div>
                 <div class="row g-4">
                     <div class="col-12">
@@ -237,12 +251,9 @@ $level = "pemohon";
                         </div>
                     </div>
                     <div class="col-md-12 wow fadeIn" data-wow-delay="0.1s">
-                        <iframe class="position-relative rounded w-100 h-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31685.4497973044!2d110.93422241838176!3d-6.928653679605244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70c9b5273a7b47%3A0xb683234543e0d1d0!2sKedumulyo%2C%20Sukolilo%2C%20Pati%20Regency%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1687680998321!5m2!1sen!2sid"
-                            frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
+                        <iframe class="position-relative rounded w-100 h-100" src="gis/index.html" frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -250,17 +261,14 @@ $level = "pemohon";
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-           
+
             <div class="container">
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                            &copy; <a class="border-bottom" href="#"><?php echo $data['nama_desa']; ?></a>, All Right Reserved.</a>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>

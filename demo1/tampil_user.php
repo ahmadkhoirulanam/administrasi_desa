@@ -75,7 +75,7 @@
                                                             <th>Alamat</th>
                                                             <th>Jenis Kelamin</th>
                                                             <th>Status Warga</th>
-                                                            <th>Password</th>
+                                                            <!-- <th>Password</th> -->
                                                             <th>Hak Akses</th>
                                                             <th style="width: 10%">Action</th>
                                                         </tr>
@@ -83,7 +83,7 @@
                                                     <tbody>
                                                         <?php
                                                             $no=1;
-                                                            $tampil = "SELECT * FROM data_user";
+                                                            $tampil = "SELECT * FROM data_user WHERE hak_akses='pemohon'";
                                                             $query = mysqli_query($konek,$tampil);
                                                             while($data=mysqli_fetch_array($query,MYSQLI_BOTH)){
                                                                 $username = $data['nik'];
@@ -104,7 +104,7 @@
                                                             <td><?php echo $alamat;?></td>
                                                             <td><?php echo $jekel;?></td>
                                                             <td><?php echo $status_warga;?></td>
-                                                            <td><?php echo $password;?></td>
+                                                            <!-- <td><?php echo $password;?></td> -->
                                                             <td><?php echo $hak_akses;?></td>
                                                             <td>
                                                                 <div class="form-button-action">

@@ -4,7 +4,7 @@ include '../konek.php';
 
 	// membuat variabel untuk menampung data dari form
   $nama   = $_POST['nama']; 
-  $id_jenis_unggulan    = $_POST['id_jenis_unggulan'];
+  $id_jenis_unggulan    = $_POST['keterangan'];
   $gambar_produk = $_FILES['gambar_produk']['name'];
 
 
@@ -19,7 +19,7 @@ if($gambar_produk != "") {
         if(in_array($ekstensi, $ekstensi_diperbolehkan) === true)  {     
                 move_uploaded_file($file_tmp, 'gambar/'.$nama_gambar_baru); //memindah file gambar ke folder gambar
                   // jalankan query INSERT untuk menambah data ke database pastikan sesuai urutan (id tidak perlu karena dibikin otomatis)
-                  $query = "INSERT INTO produk_unggulan (nama_unggulan, id_jenis_unggulan, foto) VALUES ('$nama', '$id_jenis_unggulan', '$nama_gambar_baru')";
+                  $query = "INSERT INTO produk_unggulan (nama_unggulan, keterangan, foto) VALUES ('$nama', '$id_jenis_unggulan', '$nama_gambar_baru')";
                   $result = mysqli_query($konek, $query);
                   // periska query apakah ada error
                   if(!$result){

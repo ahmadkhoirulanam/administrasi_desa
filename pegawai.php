@@ -79,7 +79,7 @@
       $password = $_POST['password'];
       $hak_akses = $_POST['hak_akses'];
       
-        $sql_login = "SELECT * FROM data_user WHERE hak_akses='$hak_akses' AND password='$password'";
+        $sql_login = "SELECT * FROM data_user WHERE username='$hak_akses' AND password='$password'";
         $query_login = mysqli_query($konek,$sql_login);
         $data_login = mysqli_fetch_array($query_login,MYSQLI_BOTH);
         $jumlah_login = mysqli_num_rows($query_login);

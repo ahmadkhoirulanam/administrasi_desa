@@ -101,7 +101,7 @@
                                 <table border="1" align="center">
                                     <table border="0" align="center">
                                         <tr>
-                                        <td><img src="img/kudus.png" width="70" height="87" alt=""></td>
+                                        <td><img src="img/pati.png" width="70" height="87" alt=""></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
@@ -123,10 +123,10 @@
                                         <td></td>
                                             <td>
                                                 <center>
-                                                    <font size="4">PEMERINTAHAN KABUPATEN KUDUS</font><br>
-                                                    <font size="4">KECAMATAN KOTA KUDUS</font><br>
-                                                    <font size="5"><b>KELURAHAN WERGU WETAN</b></font><br>
-                                                    <font size="2"><i>JL. Loram No.9 Kudus 59318</i></font><br>
+                                                    <font size="4">PEMERINTAHAN KABUPATEN PATI</font><br>
+                                                    <font size="4">KECAMATAN SUKOLILO</font><br>
+                                                    <font size="5"><b>DESA KEDUMULYO</b></font><br>
+                                                  
                                                 </center>
                                             </td>
                                         <td></td>
@@ -171,7 +171,7 @@
                                     <table border="0" align="center">
                                         <tr>
                                             <td>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bertanda tangan di bawah ini Lurah Wergu Wetan Kabupaten Kota <br> Kudus, Menerangkan bahwa :
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bertanda tangan di bawah ini Kepala Desa Kedumulyo Kecamatan <br> Sukolilo, Menerangkan bahwa :
                                             </td>
                                         </tr>
                                     </table>
@@ -247,12 +247,12 @@
                                         <tr>
                                             <th></th>
                                             <th width="100px"></th>
-                                            <th>Kudus, <?php echo $format3;?></th>
+                                            <th>Sukolilo, <?php echo $format3;?></th>
                                         </tr>
                                         <tr>
                                             <td>Tanda tangan <br> Yang bersangkutan </td>
                                             <td></td>
-                                            <td>Lurah Wergu Wetan</td>
+                                            <td>Kepala Desa Kedumulyo</td>
                                         </tr>
                                         <tr>
                                             <td rowspan="15"></td>
@@ -304,7 +304,7 @@
                                         <tr>
                                             <td><b style="text-transform:uppercase"><u>(<?php echo $nama;?>)</u></b></td>
                                             <td></td>
-                                            <td><b><u>(AGUS SUPRIYANTO)</u></b></td>
+                                            <td><b><u>(SUTRISNO)</u></b></td>
                                         </tr>
                                     </table>
                                 </table>

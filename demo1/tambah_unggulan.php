@@ -19,8 +19,8 @@
                                     <input type="text" name="nama" class="form-control" autofocus="" required="" />
                                 </div>                               
                                 <div class="form-group">
-                                    <label>Jenis Produk Unggulan</label>
-                                    <input type="text" name="id_jenis_unggulan" class="form-control" required="" />
+                                    <label>keterangan</label>
+                                    <input type="text" name="keterangan" class="form-control" required="" />
                                 </div>                               
                                 <div class="form-group">
                                     <label>Gambar Produk</label>

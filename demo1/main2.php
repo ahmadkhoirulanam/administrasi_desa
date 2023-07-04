@@ -44,12 +44,6 @@ if (isset($_SESSION['password']) == "" || ($_SESSION['hak_akses']) == "") {
 							<p>Surat Selesai</p>
 						</a>
 					</li>
-					<li class="nav-item">
-						<a href="?halaman=anam">
-							<i class="far fa-calendar-check"></i>
-							<p>desa</p>
-						</a>
-					</li>
 				<?php
 				} elseif ($hak_akses == "Rt2") {
 				?>

@@ -38,7 +38,7 @@ if ($gambar_produk != "") {
   }
 } else {
   // jalankan query UPDATE berdasarkan ID yang produknya kita edit
-  $query  = "UPDATE produk_unggulan SET nama_unggulan = '$nama', id_jenis_unggulan = '$id_jenis_unggulan'";
+  $query  = "UPDATE produk_unggulan SET nama_unggulan = '$nama', keterangan = '$id_jenis_unggulan'";
   $query .= "WHERE id_produk_unggulan = '$id'";
   $result = mysqli_query($konek, $query);
   // periska query apakah ada error

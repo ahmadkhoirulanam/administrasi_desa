@@ -123,7 +123,7 @@ date_default_timezone_set('Asia/Jakarta');
 										<tr>
 											<th>No</th>
 											<th>nama_unggulan</th>
-											<th>id_jenis_unggulan</th>																				
+											<th>keterangan</th>																				
 											<th>foto</th>
 											<th>Action</th>
 										</tr>
@@ -149,7 +149,7 @@ date_default_timezone_set('Asia/Jakarta');
 											<tr>
 												<td><?php echo $no; ?></td>
 												<td><?php echo $row['nama_unggulan']; ?></td>
-												<td><?php echo $row['id_jenis_unggulan']; ?></td>												
+												<td><?php echo $row['keterangan']; ?></td>												
 												<td style="text-align: center;"><img src="gambar/<?php echo $row['foto']; ?>" style="width: 50px;"></td>
 												
 												<td>

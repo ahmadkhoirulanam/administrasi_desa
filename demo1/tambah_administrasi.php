@@ -22,10 +22,24 @@
                                     <label>Deskripsi</label>
                                     <input type="text" name="deskripsi" class="form-control" />
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label>Jenis Administrasi</label>
                                     <input type="text" name="id_jenis_administrasi" class="form-control" required="" />
-                                </div>                               
+                                </div>   -->
+                                <div class="form-group">
+                                    <label>Jenis Administrasi</label>
+                                        <select class="select2 form-control w-100" id="fakultas" name="id_jenis_administrasi">
+                                            <option> Silahkan Pilih..</option>
+                                            <?php
+                                            $query = mysqli_query($konek, "SELECT * FROM jenis_administrasi ORDER BY id_jenis_administrasi ");
+                                            while ($row = mysqli_fetch_array($query)) {
+                                            ?>
+                                                <option value="<?php echo $row['id_jenis_administrasi']; ?>">
+                                                    <?php echo $row['nama_jenis']; ?>
+                                                </option>
+                                            <?php } ?>
+                                        </select>
+                                </div>                             
                                 <div class="form-group">
                                     <label>Gambar Produk</label>
                                     <input type="file" name="gambar_produk" class="form-control" required="" />

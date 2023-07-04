@@ -145,9 +145,10 @@
                              <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="service-item rounded pt-3">
                                     <div class="p-4">
-                                    <img src="demo1/gambar/<?php echo $row['foto']; ?>" style="width: 200px;">
-                                        <h5><?php echo $row['nama']; ?></h5>
-                                        <p><?php echo $row['keterangan']; ?></p>
+                                    <img src="demo1/gambar/<?php echo $row['foto']; ?>" style="width: 200px;height: 200px;"><br><br>
+                                        <h5><?php echo $row['nama']; ?>-<?php echo $row['periode']; ?></h5>
+                                        <p><?php echo substr($row['keterangan'], 0, 85); ?>...</p>
+                                        <a class="btn btn-success py-3 px-5 mt-2" href="<?php echo $row['link']; ?>" target="_blank" >Lihat</a>
                                     </div>
                                 </div>
                             </div>

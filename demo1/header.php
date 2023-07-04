@@ -1,9 +1,24 @@
 <?php include '../konek.php';?>
+<?php 
+	$query = "SELECT * FROM profil_desa";
+	$result = mysqli_query($konek, $query);
+	// jika data gagal diambil maka akan tampil error berikut
+	if (!$result) {
+		die("Query Error: " . mysqli_errno($konek) .
+			" - " . mysqli_error($konek));
+	}
+	// mengambil data dari database
+	$data = mysqli_fetch_assoc($result);
+	// apabila data tidak ada pada database maka akan dijalankan perintah ini
+	if (!count($data)) {
+		echo "<script>alert('Data tidak ditemukan pada database');window.location='index.php';</script>";
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Dashboard Pelayanan Surat Keterangan Online Kelurahan Wergu Wetan</title>
+	<title>Dashboard Pelayanan Surat Keterangan Online DESA KEDUMULYO</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
 
@@ -32,9 +47,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
 				
-				<a href="#" class="logo">
-					<img src="../main/img/logo5.png" width="125" alt="navbar brand" class="navbar-brand">
-				</a>
+			<h2 class="text-white pt-2 fw-bold">Desa <?php echo $data['nama_desa']; ?></h2>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
 						<i class="icon-menu"></i>

@@ -134,7 +134,7 @@ date_default_timezone_set('Asia/Jakarta');
 										<tbody>
 											<?php
 											// jalankan query untuk menampilkan semua data diurutkan berdasarkan nim
-											$query = "SELECT * FROM administrasi ORDER BY id_administrasi ASC";
+											$query = "SELECT administrasi.*, jenis_administrasi.nama_jenis FROM administrasi INNER JOIN jenis_administrasi ON `administrasi`.`id_jenis_administrasi`=jenis_administrasi.`id_jenis_administrasi` ORDER BY id_administrasi DESC;";
 											$result = mysqli_query($konek, $query);
 											//mengecek apakah ada error ketika menjalankan query
 											if(!$result){
@@ -151,11 +151,11 @@ date_default_timezone_set('Asia/Jakarta');
 											?>
 											<tr>
 												<td><?php echo $no; ?></td>
-												<td><?php echo $row['nama']; ?></td>
+												<td style="width: 20%"><?php echo $row['nama']; ?></td>
 												<td><?php echo substr($row['keterangan'], 0, 20); ?>...</td>
-												<td><?php echo $row['id_jenis_administrasi']; ?></td>												
+												<td><?php echo $row['nama_jenis']; ?></td>												
 												<td style="text-align: center;"><img src="gambar/<?php echo $row['foto']; ?>" style="width: 50px;"></td>
-												<td><?php echo $row['link']; ?></td>
+												<td style="width: 15%"><a href="<?php echo $row['link']; ?>"target="_blank" >Lihat Link</a></td>
 												<td><?php echo $row['periode']; ?></td>
 												<td>
 													<div class="form-button-action">
