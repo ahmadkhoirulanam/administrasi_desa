@@ -251,7 +251,7 @@ if (!count($data)) {
                         </div>
                     </div>
                     <div class="col-md-12 wow fadeIn" data-wow-delay="0.1s">
-                        <iframe class="position-relative rounded w-100 h-100" src="gis/index.html" frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <iframe class="position-relative rounded w-100 h-100" src="map_baru/index.html" frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
 
                 </div>

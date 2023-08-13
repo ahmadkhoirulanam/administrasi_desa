@@ -8,7 +8,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="d-flex align-items-center">
-										<h4 class="card-title">STATUS REQUEST SURAT KETERANGAN TIDAK MAMPU ya</h4>
+										<h4 class="card-title">STATUS REQUEST SURAT KETERANGAN TIDAK MAMPU</h4>
 									</div>
 								</div>
 								<div class="card-body">
@@ -18,12 +18,11 @@
 												<tr>
                                                     <th>Tanggal Request</th>
                                                     <th>NIK</th>
-                                                    <th>Nama Lengkap</th>
-													<th>Scan KTP</th>
-													<th>Scan KK</th>
+                                                    <th>Nama Lengkap</th>													
 													<th>Keperluan</th>
 													<th>Status</th>
 													<th>Keterangan</th>
+													<th>Cetak</th>
 													<th style="width: 10%">Action</th>
 												</tr>
 											</thead>
@@ -57,11 +56,29 @@
 													<td><?php echo $format;?></td>
                                                     <td><?php echo $nik;?></td>
                                                     <td><?php echo $nama;?></td>
-													<td><img src="../dataFoto/scan_ktp/<?php echo $ktp;?>" width="50" height="50" alt=""></td>
-													<td><img src="../dataFoto/scan_kk/<?php echo $kk;?>" width="50" height="50" alt=""></td>
 													<td><?php echo $keperluan;?></td>
 													<td class="fw-bold text-uppercase text-danger op-8"><?php echo $status;?></td>
 													<td><i><?php echo $keterangan;?></i></td>
+													<td>
+														<?php 
+															if ($keterangan=="Surat dicetak, bisa diambil!"){
+																?>
+																<a href="http://localhost/surat-keterangan-desa/cetak.php?id=<?php echo $id_request_sktm;?>" target="_blank">
+																	<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Cetak Surat">
+																		<i class="fa fa-print"></i>
+																	</button>
+																</a>
+																<?php
+
+															}
+															else {
+																?>
+																<i>Belum Bisa Dicetak</i>
+																<?php
+															}
+														?>
+													</td>
+														
 													<td>
 														<div class="form-button-action">
 															<a href="?halaman=ubah_sktm&id_request_sktm=<?= $id_request_sktm;?>">
@@ -102,12 +119,11 @@
 														<th>Tanggal Request</th>
 														<th>NIK</th>
 														<th>Nama Lengkap</th>
-														<th>Scan KTP</th>
-														<th>Scan KK</th>
 														<th>Usaha</th>
 														<th>Keperluan</th>
 														<th>Status</th>
 														<th>Keterangan</th>
+														<th>Cetak</th>
 														<th style="width: 10%">Action</th>
 													</tr>
 												</thead>
@@ -142,12 +158,29 @@
 														<td><?php echo $format;?></td>
 														<td><?php echo $nik;?></td>
 														<td><?php echo $nama;?></td>
-														<td><img src="../dataFoto/scan_ktp/<?php echo $ktp;?>" width="50" height="50" alt=""></td>
-														<td><img src="../dataFoto/scan_kk/<?php echo $kk;?>" width="50" height="50" alt=""></td>
 														<td><?php echo $usaha;?></td>
 														<td><?php echo $keperluan;?></td>
 														<td class="fw-bold text-uppercase text-danger op-8"><?php echo $status;?></td>
 														<td><i><?php echo $keterangan;?></i></td>
+														<td>
+															<?php 
+																if ($status=="<b style='color:blue'>Sudah ACC Lurah</b>"){
+																	?>
+																	<a href="http://localhost/surat-keterangan-desa/cetak_usaha.php?id=<?php echo $id_request_sku;?>" target="_blank">
+																		<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Cetak Surat">
+																			<i class="fa fa-print"></i>
+																		</button>
+																	</a>
+																	<?php
+
+																}
+																else {
+																	?>
+																	<i>Belum Bisa Dicetak</i>
+																	<?php
+																}
+															?>
+														</td>
 														<td>
 															<div class="form-button-action">
 																<a href="?halaman=ubah_sku&id_request_sku=<?= $id_request_sku;?>">
@@ -189,11 +222,10 @@
                                                     <th>Tanggal Request</th>
                                                     <th>NIK</th>
                                                     <th>Nama Lengkap</th>
-													<th>Scan KTP</th>
-													<th>Scan KK</th>
 													<th>Keperluan</th>
 													<th>Status</th>
 													<th>Keterangan</th>
+													<th>Cetak</th>
 													<th style="width: 10%">Action</th>
 												</tr>
 											</thead>
@@ -228,11 +260,28 @@
 													<td><?php echo $format;?></td>
                                                     <td><?php echo $nik;?></td>
 													<td><?php echo $nama;?></td>
-													<td><img src="../dataFoto/scan_ktp/<?php echo $ktp;?>" width="50" height="50" alt=""></td>
-													<td><img src="../dataFoto/scan_kk/<?php echo $kk;?>" width="50" height="50" alt=""></td>
-													<td><?php echo $keperluan;?></td>
+													<td><?php echo $keperluan;?></td>													
 													<td class="fw-bold text-uppercase text-danger op-8"><?php echo $status;?></td>
 													<td><i><?php echo $keterangan;?></i></td>
+													<td>
+														<?php 
+															if ($status=="<b style='color:blue'>Sudah ACC Lurah</b>"){
+																?>
+																<a href="http://localhost/surat-keterangan-desa/cetak_lain.php?id=<?php echo $id_request_skp;?>" target="_blank">
+																	<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Cetak Surat">
+																		<i class="fa fa-print"></i>
+																	</button>
+																</a>
+																<?php
+
+															}
+															else {
+																?>
+																<i>Belum Bisa Dicetak</i>
+																<?php
+															}
+														?>
+													</td>
 													<td>
 														<div class="form-button-action">
 														<a href="?halaman=ubah_skp&id_request_skp=<?=$id_request_skp;?>">
@@ -274,11 +323,10 @@
                                                     <th>Tanggal Request</th>
                                                     <th>NIK</th>
                                                     <th>Nama Lengkap</th>
-													<th>Scan KTP</th>
-													<th>Scan KK</th>
 													<th>Status</th>
 													<th>Keperluan</th>
 													<th>Keterangan</th>
+													<th>Cetak</th>
 													<th style="width: 10%">Action</th>
 												</tr>
 											</thead>
@@ -312,11 +360,28 @@
 													<td><?php echo $format;?></td>
                                                     <td><?php echo $nik;?></td>
                                                     <td><?php echo $nama;?></td>
-													<td><img src="../dataFoto/scan_ktp/<?php echo $ktp;?>" width="50" height="50" alt=""></td>
-													<td><img src="../dataFoto/scan_kk/<?php echo $kk;?>" width="50" height="50" alt=""></td>
 													<td class="fw-bold text-uppercase text-danger op-8"><?php echo $status;?></td>
 													<td><?= $keperluan;?></td>
 													<td><i><?= $keterangan;?></i></td>
+													<td>
+														<?php 
+															if ($status=="<b style='color:blue'>Sudah ACC Lurah</b>"){
+																?>
+																<a href="http://localhost/surat-keterangan-desa/cetak_domisili.php?id=<?php echo $id_request_skd;?>" target="_blank">
+																	<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Cetak Surat">
+																		<i class="fa fa-print"></i>
+																	</button>
+																</a>
+																<?php
+
+															}
+															else {
+																?>
+																<i>Belum Bisa Dicetak</i>
+																<?php
+															}
+														?>
+													</td>
 													<td>
 														<div class="form-button-action">
 														<a href="?halaman=ubah_skd&id_request_skd=<?= $id_request_skd;?>">

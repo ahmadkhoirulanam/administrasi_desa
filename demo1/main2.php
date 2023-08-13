@@ -25,7 +25,39 @@ if (isset($_SESSION['password']) == "" || ($_SESSION['hak_akses']) == "") {
 				</li>
 				<?php
 				if ($hak_akses == "Rt") {
-				?>
+				?> 
+					<li class="nav-item">
+						<a data-toggle="collapse" href="#adminsitasi">
+							<i class="fas fa-table"></i>
+							<p>Administrasi Desa</p>
+							<span class="caret"></span>
+						</a>
+						<div class="collapse" id="adminsitasi">
+							<ul class="nav nav-collapse">
+								<li>
+									<a href="?halaman=kelola_jenis_administrasi">
+										<span class="sub-item">Kelola Kategori</span>
+									</a>
+								</li>
+								<li>
+									<a href="?halaman=daftar_administrasi">
+										<span class="sub-item">Daftar Administrasi</span>
+									</a>
+								</li>
+								<li>
+									<a href="?halaman=profil_desa">
+										<span class="sub-item">Profil Desa</span>
+									</a>
+								</li>
+								<li>
+									<a href="?halaman=produk_unggulan">
+										<span class="sub-item">Produk Ungulan</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+
 					<li class="nav-item">
 						<a href="?halaman=tampil_user">
 							<i class="fas fa-user-alt"></i>
@@ -89,38 +121,7 @@ if (isset($_SESSION['password']) == "" || ($_SESSION['hak_akses']) == "") {
 				<?php
 				} elseif ($hak_akses == "Lurah") {
 				?>
-					<li class="nav-item">
-						<a data-toggle="collapse" href="#adminsitasi">
-							<i class="fas fa-table"></i>
-							<p>Administrasi Desa</p>
-							<span class="caret"></span>
-						</a>
-						<div class="collapse" id="adminsitasi">
-							<ul class="nav nav-collapse">
-								<li>
-									<a href="?halaman=kelola_jenis_administrasi">
-										<span class="sub-item">Kelola Kategori</span>
-									</a>
-								</li>
-								<li>
-									<a href="?halaman=daftar_administrasi">
-										<span class="sub-item">Daftar Administrasi</span>
-									</a>
-								</li>
-								<li>
-									<a href="?halaman=profil_desa">
-										<span class="sub-item">Profil Desa</span>
-									</a>
-								</li>
-								<li>
-									<a href="?halaman=produk_unggulan">
-										<span class="sub-item">Produk Ungulan</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-
+					
 					<li class="nav-item">
 						<a data-toggle="collapse" href="#tables">
 							<i class="fas fa-envelope"></i>
