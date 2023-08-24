@@ -1,18 +1,16 @@
-<!DOCTYPE html>
 <html>
-
 <head>
-    <title>Tampilan Surat</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
+    <title> KOP SURAT </title>
+    <style type= "text/css">
+    body {font-family: arial; background-color : #ccc }
+    .rangkasurat {width : 980px;margin:0 auto;background-color : #fff;height: 200%;padding: 20px;}
+    .tableatas {border-bottom : 5px solid #000; padding: 2px}
+    .tengah {text-align : center;line-height: 5px;}
+    .isi {line-height: 30px;}
+    .left-align {
+        text-align: left;
+    }
+    .header {
             text-align: center;
         }
 
@@ -38,15 +36,23 @@
             float: right;
             margin-top: 30px;
         }
+        .body {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .ttd {
+            text-align: right;
+            line-height: 1.6;
+        }
+
 
         .clear {
             clear: both;
         }
-    </style>
+     </style >
 </head>
-
 <body>
-    <?php
+<?php
     include 'konek.php';
     // Mengambil nilai id dari URL
     if (isset($_GET['id'])) {
@@ -68,172 +74,137 @@
         echo "Tidak ada nilai id dalam URL.";
     }
     ?>
-
     
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <table border="1" align="center">
-                        <table border="0" align="center">
-                            <tr>
-                                <td><img src="demo1/img/pati.png" width="70" height="87" alt=""></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <center>
-                                        <font size="4">PEMERINTAHAN KABUPATEN PATI</font><br>
-                                        <font size="4">KECAMATAN SUKOLILO</font><br>
-                                        <font size="5"><b>DESA KEDUMULYO</b></font><br>
-
-                                    </center>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td colspan="45">
-                                    <hr color="black">
-                                </td>
-                            </tr>
-                        </table>
-                        <br>
-                        <table border="0" align="center">
-                            <tr>
-                                <td>
-                                    <center>
-                                        <font size="4"><b>SURAT KETERANGAN / PENGANTAR</b></font><br>
-                                        <hr style="margin:0px" color="black">
-                                        <span>Nomor : 045.2 / <?php echo $id; ?> / 29.07.05</span>
-                                    </center>
-                                </td>
-                            </tr>
-                        </table>
-                        <br>
-                        <table border="0" align="center">
-                            <tr>
-                                <td>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bertanda tangan di bawah ini Kepala Desa Kedumulyo Kecamatan Sukolilo, Menerangkan bahwa :
-                                </td>
-                            </tr>
-                        </table>
-                        <br>
-                        <table border="0" class="ml-5">
-                            <tr>
-                                <td>Nama</td>
-                                <td>:</td>
-                                <td><?php echo $data['nama']; ?></td>
-                            </tr>
-                            <tr>
-                                <td>TTL</td>
-                                <td>:</td>
-                                <td><?php echo $data['tanggal_lahir']; ?></td>
-                            </tr>
-                            <tr>
-                                <td>Jenis Kelamin</td>
-                                <td>:</td>
-                                <td><?php echo $data['jekel']; ?></td>
-                            </tr>
-                            <tr>
-                                <td>Agama</td>
-                                <td>:</td>
-                                <td><?php echo $data['agama']; ?></td>
-                            </tr>
-                            <tr>
-                                <td>Status Warga</td>
-                                <td>:</td>
-                                <td><?php echo $data['status_warga']; ?></td>
-                            </tr>
-                            <tr>
-                                <td>No. NIK</td>
-                                <td>:</td>
-                                <td><?php echo $data['nik']; ?></td>
-                            </tr>
-                            <tr>
-                                <td>Alamat</td>
-                                <td>:</td>
-                                <td><?php echo $data['alamat']; ?></td>
-                            </tr>
-                        </table>
-                        <br>
-                        <table border="0" align="center">
-                            <tr>
-                                <td>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bahwa orang tersebut benar merupakan warga Desa Kedumulyo Kecamatan Sukolilo. Surat ini dipergunakan untuk <?php echo $data['keperluan']; ?>. Demikian surat ini diberikan kepada yang bersangkutan agar dapat dipergunakan untuk sebagaimana mestinya.
-                                </td>
-                            </tr>
-                        </table>
-                        <br>
-                        <br>
-                        <table border="0" align="center">
-                            <tr>
-                                <th></th>
-                                <th width="100px"></th>
-                                <th>Sukolilo,  <?php echo $data['acc']; ?></th>
-                            </tr>
-                            <tr>
-                                <td>Tanda tangan <br> Yang bersangkutan </td>
-                                <td></td>
-                                <td>Kepala Desa Kedumulyo</td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <th width="100px"></th>
-                                <th><img src="demo1/img/ttd.png" width="70" height="87" alt=""></th>
-                            </tr>
-                           
-                           
-                            <tr>
-                                <td><b style="text-transform:uppercase"><u>(<?php echo $data['nama']; ?>)</u></b></td>
-                                <td></td>
-                                <td><b><u>(SUTRISNO)</u></b></td>
-                            </tr>
-                        </table>
-                    </table>
-
-                </div>
-            </div>
-        </div>
+<div class = "rangkasurat">
+     <table width = "100%" class ="tableatas">
+           <tr>
+                 <td width="10%"> <img src="demo1/img/pati.png" width="100px"> </td>
+                 <td width="90%" class = "tengah">
+                       <h2>PEMERINTAHAN KABUPATEN PATI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                       <h2>KECAMATAN SUKOLILO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                       <h2>DESA KEDUMULYO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                       <b>Alamat : Kantor Kepala Desa Kedumulyo Kec. Sukolilo Kab. Pati KP. 59172&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+                 </td>
+            </tr>
+     </table >
+     <br>
+     <br><br>
+     <table border="0" align="center">
+        <tr>
+            <td>
+                <center>
+                    <font size="4"><b>SURAT KETERANGAN / PENGANTAR</b></font><br>
+                    <hr style="margin:0px" color="black">
+                    <font size="3"><b>Nomor : <?php echo $id; ?> / KDM / VIII / 2023</b></font><br>
+                </center>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <table border="0" align="">
+        <tr>
+            <td>
+            <font size="4">Yang bertanda tangan di bawah ini Kepala Desa Kedumulyo Kec. Sukolilo Kab. Pati, menerangkan bahwa : </font>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table border="0" class="isi ml-5">
+        <tr>
+            <td><font size="4">Nama Lengkap</font></td>
+            <td><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</font></td>
+            <td><font size="4"><?php echo $data['nama']; ?></font></td>
+        </tr>
+        <tr>
+            <td><font size="4">Jenis Kelamin</font></td>
+            <td><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+            <td><font size="4"><?php echo $data['jekel']; ?></font></td>
+        </tr>
+        <tr>
+            <td><font size="4">Tempat / Tanggal Lahir</font></td>
+            <td><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</font></td>
+            <td><font size="4">Pati / <?php echo $data['tanggal_lahir']; ?></font></td>
+        </tr>
+     
+        <tr>
+            <td><font size="4">Kewarganegaraan</font></td>
+            <td><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+            <td><font size="4">WNI</font></td>
+        </tr>
+        <tr>
+            <td><font size="4">Status Perkawinan</font></td>
+            <td><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+            <td><font size="4">WNI</font></td>
+        </tr>
+        <tr>
+            <td><font size="4">Status Warga</font></td>
+            <td><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</font></td>
+            <td><font size="4"><?php echo $data['status_warga']; ?></font></td>
+        </tr>
+        <tr>
+            <td><font size="4">Agama</font></td>
+            <td><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</font></td>
+            <td><font size="4"><?php echo $data['agama']; ?></font></td>
+        </tr>
+        <tr>
+            <td><font size="4">Nomor Induk Kependuudkan</font></td>
+            <td><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</font></td>
+            <td><font size="4"><?php echo $data['nik']; ?></font></td>
+        </tr>
+        <tr>
+            <td><font size="4">Nomor Kartu Keluarga</font></td>
+            <td><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</font></td>
+            <td><font size="4">12435685</font></td>
+        </tr>
+        <tr>
+            <td><font size="4">Alamat Tinggal</font></td>
+            <td><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</font></td>
+            <td><font size="4"><?php echo $data['alamat']; ?></font></td>
+        </tr>
+        <tr>
+            <td><font size="4">Keperluan</font></td>
+            <td><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</font></td>
+            <td><font size="4"><?php echo $data['keperluan']; ?></font></td>
+        </tr>
+    </table>
+    <br>
+    <div class="body">
+        
+        <p><font size="4">Demikian surat keterangan ini kami buat dengan sebenarnya untuk dapat digunakan sebagaimana mestinya.</font></p>
     </div>
-    <script>        
+    <br>
+    <br>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th></th>
+            <th width="500px"></th>
+            <th class="ttd"><font size="4">Sukolilo,  <?php echo $data['acc']; ?></font></th>
+        </tr>
+        <tr>
+            <td><font size="4">Tanda tangan <br> Yang bersangkutan </font></td>
+            <td></td>
+            <td ><font size="4">Kepala Desa Kedumulyo</font></td>
+        </tr>
+        <tr>
+            <th></th>
+            <th width="80px"></th>
+            <th><img src="demo1/img/ttd.png" width="70" height="87" alt=""></th>
+        </tr>
+        
+        
+        <tr>
+            <td><b style="text-transform:uppercase"><u>(<?php echo $data['nama']; ?>)</u></b></td>
+            <td></td>
+            <td><b><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>(SUTRISNO)</u></font></b></td>
+        </tr>
+    </table>
+</table>
+</div>
+<script>        
             window.print(); // Ini akan mencetak halaman secara otomatis        
     </script>
 </body>
-
 </html>
